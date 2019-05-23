@@ -1,7 +1,7 @@
 # image-list-generator
 Generates webcomic-style HTML pages from a list of images. Pages contain a title, image, navigation with first/previous/next/latest page buttons, and an optional description.
 
-WIP. May be wonky. Play about with it!
+WIP. May be wonky, certainly isn't pretty, but it'll do what it's meant to. Play about with it!
 
 How to use:
 * Edit template-page.html and style.css in the input folder to your liking.
