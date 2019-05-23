@@ -5,8 +5,8 @@ WIP. May be wonky. Play about with it!
 
 How to use:
 * Edit template-page.html and style.css in the input folder to your liking.
-* Populate images.json with the images you want to use. "img" and "title" are mandatory, "desc" is optional and can contain HTML.
 * Don't remove the comments containing IMG, PREVIOUS, NEXT, LATEST and DESC as the generator uses these to place those items.
+* Populate images.json with the images you want to use in the order you want them to display. "img" and "title" are mandatory, "desc" is optional and can contain HTML.
 * Run the script: node gen.js
 * Sit back and relax as (hopefully) the script spits out numbered, navigable static pages that you can upload to a host of your choice.
 * If not, yell at me. Nicely.
