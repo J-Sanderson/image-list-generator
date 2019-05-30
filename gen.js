@@ -16,9 +16,8 @@ fs.readFile('input/template-page.html', 'utf8', function(err, contents) {
     images = JSON.parse(images);
 
     //set last page buttons
-    template = template.split('<!-- LATEST -->');
     numImg = images.length;
-    template = template[0] + `${numImg}.html` + template[1];
+    template = insertContent(template, '<!-- LATEST -->', `${numImg}.html`);
 
     //write individual pages
     console.log('parsing images...')
@@ -31,7 +30,7 @@ fs.readFile('input/template-page.html', 'utf8', function(err, contents) {
     //copy over the stylesheet
     fs.copyFile('input/style.css', 'output/style.css', function(err) {
       if (err) throw err;
-      console.log('copied over stylesheet')
+      console.log('copied over stylesheet');
     });
   });
 });
@@ -39,13 +38,14 @@ fs.readFile('input/template-page.html', 'utf8', function(err, contents) {
 function writePage(img, index) {
   let page = template;
   //insert title and image
-  page = insertContent(page, '<!-- IMG -->', `<h2>${index}: ${img.title}</h2><img src="${img.img}">`)
+  page = insertContent(page, '<!-- TITLE -->', img.title);
+  page = insertContent(page, '<!-- IMG -->', `<img src="${img.img}">`);
   //set previous button
   let prevPage = index === 1 ? '1.html' : `${index - 1}.html`;
   page = insertContent(page, '<!-- PREVIOUS -->', prevPage);
   //set next button
   let nextPage = index === numImg ? `${index}.html` : `${index + 1}.html`;
-  page = insertContent(page, '<!-- NEXT -->', nextPage)
+  page = insertContent(page, '<!-- NEXT -->', nextPage);
   //check for desc and render if present
   if (img.desc) {
     page = insertContent(page, '<!-- DESC -->', img.desc);
