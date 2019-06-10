@@ -25,6 +25,8 @@ fs.readFile('input/template-page.html', 'utf8', function(err, contents) {
       let imgPos = images.indexOf(img) + 1;
       fs.writeFileSync(`output/${imgPos}.html`, writePage(img, imgPos));
       console.log(`created page ${imgPos} of ${images.length}`);
+      fs.copyFileSync(`input/img/${img.img}`, `output/img/${img.img}`);
+      console.log(`copied over image ${imgPos} of ${images.length}`);
     });
 
     //copy over the stylesheet
@@ -39,7 +41,7 @@ function writePage(img, index) {
   let page = template;
   //insert title and image
   page = insertContent(page, '<!-- TITLE -->', img.title);
-  page = insertContent(page, '<!-- IMG -->', `<img src="${img.img}">`);
+  page = insertContent(page, '<!-- IMG -->', `<img src="img/${img.img}">`);
   //set previous button
   let prevPage = index === 1 ? '1.html' : `${index - 1}.html`;
   page = insertContent(page, '<!-- PREVIOUS -->', prevPage);

@@ -1,25 +1,31 @@
 [
   {
-    "img": "https://placeimg.com/640/480/animals",
-    "title": "In venenatis risus",
-    "desc": "Donec sodales euismod est sollicitudin finibus. Fusce ultrices varius erat, et blandit neque suscipit in. Vivamus eget ex vel lorem porta fringilla ut a augue. Morbi nec quam nec risus feugiat egestas pulvinar sit amet massa."
+    "img": "001.jpg",
+    "title": "1: Gary",
+    "desc": "I am very fluffy!"
   },
   {
-    "img": "https://placeimg.com/640/480/arch",
-    "title": "Quisque congue"
+    "img": "002.jpg",
+    "title": "2: Jaffa",
+    "desc": "I love to sleep!"
   },
   {
-    "img": "https://placeimg.com/640/480/nature",
-    "title": "Maecenas euismod metus"
+    "img": "003.jpg",
+    "title": "3: Sir Francis",
+    "desc": "My moustache is <a href=#>incredible</a>."
   },
   {
-    "img": "https://placeimg.com/640/480/people",
-    "title": "Nulla libero lorem",
-    "desc": "Maecenas sed aliquam metus, in pretium nibh. Vivamus convallis nunc finibus lectus consectetur, id dapibus justo ultrices. Suspendisse euismod nulla erat, eget condimentum leo pretium sed.</p><p> Praesent dignissim purus sapien, et faucibus neque dictum quis. Duis tincidunt nisi id semper ornare. Maecenas vitae egestas elit."
+    "img": "004.jpg",
+    "title": "4: Stan",
+    "desc": "I LOVE FOOD.</p><p>I am also very stylish!"
   },
   {
-    "img": "https://placeimg.com/640/480/tech",
-    "title": "Aliquam ac",
-    "desc": "Vestibulum accumsan eget purus quis viverra. <a href=#>Aliquam erat volutpat</a>. Suspendisse at consequat leo. Mauris sed hendrerit dolor."
+    "img": "005.jpg",
+    "title": "5: Tyrian",
+    "desc": "On the next page, you will see that the desc property is optional."
+  },
+  {
+    "img": "006.jpg",
+    "title": "6: Wobble"
   }
 ]
