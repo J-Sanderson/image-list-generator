@@ -15,9 +15,13 @@ fs.readFile('input/template-page.html', 'utf8', function(err, contents) {
     if (err) throw err;
     images = JSON.parse(images);
 
-    //set last page buttons
+    //set last page buttons on template
     numImg = images.length;
-    template = insertContent(template, '<!-- LATEST -->', `${numImg}.html`);
+    template = insertContent(
+      template,
+      '<!-- LATEST -->',
+      `<a href="${numImg}.html"><button>&gt;&gt; Latest</button></a>`
+    );
 
     //write individual pages
     console.log('parsing images...')
@@ -43,11 +47,19 @@ function writePage(img, index) {
   page = insertContent(page, '<!-- TITLE -->', img.title);
   page = insertContent(page, '<!-- IMG -->', `<img src="img/${img.img}">`);
   //set previous button
-  let prevPage = index === 1 ? '1.html' : `${index - 1}.html`;
-  page = insertContent(page, '<!-- PREVIOUS -->', prevPage);
+  let prevPage = index === 1 ? 1 : index - 1;
+  page = insertContent(
+    page,
+    '<!-- PREVIOUS -->',
+    `<a href="${prevPage}.html"><button>&lt; Previous</button></a>`
+  );
   //set next button
-  let nextPage = index === numImg ? `${index}.html` : `${index + 1}.html`;
-  page = insertContent(page, '<!-- NEXT -->', nextPage);
+  let nextPage = index === numImg ? index : index + 1;
+  page = insertContent(
+    page,
+    '<!-- NEXT -->',
+    `<a href="${nextPage}.html"><button>&gt; Next</button></a>`
+  );
   //check for desc and render if present
   if (img.desc) {
     page = insertContent(page, '<!-- DESC -->', img.desc);
