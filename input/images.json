@@ -1,31 +1,31 @@
 [
   {
     "img": "001.jpg",
-    "title": "1: Gary",
+    "title": "Gary",
     "desc": "I am very fluffy!"
   },
   {
     "img": "002.jpg",
-    "title": "2: Jaffa",
+    "title": "Jaffa",
     "desc": "I love to sleep!"
   },
   {
     "img": "003.jpg",
-    "title": "3: Sir Francis",
+    "title": "Sir Francis",
     "desc": "My moustache is <a href=#>incredible</a>."
   },
   {
     "img": "004.jpg",
-    "title": "4: Stan",
+    "title": "Stan",
     "desc": "I LOVE FOOD.</p><p>I am also very stylish!"
   },
   {
     "img": "005.jpg",
-    "title": "5: Tyrian",
+    "title": "Tyrian",
     "desc": "On the next page, you will see that the desc property is optional."
   },
   {
     "img": "006.jpg",
-    "title": "6: Wobble"
+    "title": "Wobble"
   }
 ]
