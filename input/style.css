@@ -22,6 +22,15 @@ header {
   text-align: center;
 }
 
+header ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header ul li {
+  display: inline-block;
+}
+
 a {
   color: var(--link);
 }

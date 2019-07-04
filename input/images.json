@@ -17,12 +17,11 @@
   {
     "img": "004.jpg",
     "title": "Stan",
-    "desc": "I LOVE FOOD.</p><p>I am also very stylish!"
+    "desc": "I LOVE FOOD.</p><p>On the next page, you will see that the desc property is optional."
   },
   {
     "img": "005.jpg",
-    "title": "Tyrian",
-    "desc": "On the next page, you will see that the desc property is optional."
+    "title": "Tyrian"
   },
   {
     "img": "006.jpg",
