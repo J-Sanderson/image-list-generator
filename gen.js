@@ -28,11 +28,12 @@ fs.readFile("input/template-page.html", "utf8", function(err, contents) {
         //write pages and copy images
         fs.writeFileSync(`output/${imgPos}.html`, writePage(img, imgPos));
         console.log(`created page ${imgPos} of ${images.length}`);
-        fs.copyFileSync(`input/img/${img.img}`, `output/img/${img.img}`);
-        console.log(`copied over image ${imgPos} of ${images.length}`);
         //push to list for later archive page
         archiveList.push(`<li><a href="${imgPos}.html">${img.title}</a></li>`);
       }
+      //copy image to output folder
+      fs.copyFileSync(`input/img/${img.img}`, `output/img/${img.img}`);
+      console.log(`copied over image ${imgPos} of ${images.length}`);
     });
 
     //write archive page
@@ -96,9 +97,10 @@ function writePage(img, index, isIndexPage) {
     );
   }
   //check for desc and render if present
-  if (img.desc) {
-    page = insertContent(page, "<!-- DESC -->", img.desc);
-  }
+  let description = img.desc
+    ? `<div class="description"><p>${img.desc}</p><div>`
+    : "";
+  page = insertContent(page, "<!-- DESC -->", description);
   return page;
 }
 

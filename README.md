@@ -6,7 +6,7 @@ May be wonky, certainly isn't pretty, but it'll do what it's meant to. Play abou
 
 ## How to use:
 
-- Edit template-page.html, template-archive.html, and style.css in the input folder to your liking.
+- Edit template-page.html, template-archive.html, template-index.html, and style.css in the input folder to your liking.
 - Don't remove the comments containing IMG, PREVIOUS, NEXT, LATEST and DESC as the generator uses these to place those items.
 - Place the images you want to use in input/img
 - Populate images.json with the images you want to use in the order you want them to display. "img" and "title" are mandatory, "desc" is optional and can contain HTML. (Anything in the desc property will be placed inside a paragraph tag.)
