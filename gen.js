@@ -24,10 +24,12 @@ images.forEach(function(img) {
   //don't write a page for the last image (index)
   if (imgPos < numImg) {
     //write pages and copy images
-    fs.writeFileSync(`output/${imgPos}.html`, writePage(img, imgPos));
+    fs.writeFileSync(`output/pages/${imgPos}.html`, writePage(img, imgPos));
     console.log(`created page ${imgPos} of ${images.length}`);
     //push to archive list for later
-    archiveList.push(`<li><a href="${imgPos}.html">${img.title}</a></li>`);
+    archiveList.push(
+      `<li><a href="pages/${imgPos}.html">${img.title}</a></li>`
+    );
   }
   //copy images
   fs.copyFileSync(`input/img/${img.img}`, `output/img/${img.img}`);
@@ -61,11 +63,19 @@ function writePage(img, index, isIndexPage) {
   let page = isIndexPage ? indexTemplate : pageTemplate;
 
   //insert title and image
+  let imgPath = isIndexPage ? `img/${img.img}` : `../img/${img.img}`;
   page = insertContent(page, "<!-- TITLE -->", img.title);
-  page = insertContent(page, "<!-- IMG -->", `<img src="img/${img.img}">`);
+  page = insertContent(page, "<!-- IMG -->", `<img src="${imgPath}">`);
 
   //set previous button
-  let prevPage = index === 1 ? 1 : index - 1;
+  let prevPage;
+  if (isIndexPage) {
+    prevPage = `pages/${index - 1}`;
+  } else if (index === 1) {
+    prevPage = 1;
+  } else {
+    prevPage = index - 1;
+  }
   page = insertContent(
     page,
     "<!-- PREVIOUS -->",
@@ -73,7 +83,14 @@ function writePage(img, index, isIndexPage) {
   );
 
   //set next button
-  let nextPage = isIndexPage || index === numImg - 1 ? "index" : index + 1;
+  let nextPage;
+  if (isIndexPage) {
+    nextPage = "index";
+  } else if (index === numImg - 1) {
+    nextPage = "../index";
+  } else {
+    nextPage = index + 1;
+  }
   page = insertContent(
     page,
     "<!-- NEXT -->",
