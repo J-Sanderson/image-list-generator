@@ -4,6 +4,8 @@ Generates webcomic-style HTML pages from a list of images. Pages contain a title
 
 May be wonky, certainly isn't pretty, but it'll do what it's meant to. Play about with it!
 
+Output demo: https://j-sanderson.github.io/image-list-generator
+
 ## How to use:
 
 - Edit template-page.html, template-archive.html, template-index.html, and style.css in the input folder to your liking.
